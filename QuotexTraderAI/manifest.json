@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Quotex AI Trading Signals",
+  "version": "1.0.0",
+  "description": "AI-powered real-time trading signals for Quotex with technical indicators across multiple timeframes",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.quotex.io/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/logo.svg",
+      "48": "assets/logo.svg",
+      "128": "assets/logo.svg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.quotex.io/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "assets/logo.svg",
+    "48": "assets/logo.svg",
+    "128": "assets/logo.svg"
+  }
+}

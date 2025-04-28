@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotex AI Trading Signals</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="assets/logo.svg" alt="Logo" class="logo-img">
+        <span>Quotex AI Signals</span>
+      </div>
+      <div class="toggle-container">
+        <span class="toggle-label">Enable</span>
+        <label class="toggle">
+          <input type="checkbox" id="activate-toggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+    
+    <div class="timeframe-selector">
+      <button class="timeframe-btn active" data-timeframe="M1">M1</button>
+      <button class="timeframe-btn" data-timeframe="M5">M5</button>
+      <button class="timeframe-btn" data-timeframe="M15">M15</button>
+    </div>
+    
+    <div class="signal-container">
+      <div class="signal-header">
+        <h3>Current Signal</h3>
+        <span id="timestamp">--</span>
+      </div>
+      
+      <div class="signal-indicator" id="signal-indicator">
+        <div class="signal-icon">--</div>
+        <div class="signal-text">Waiting for signal</div>
+      </div>
+      
+      <div class="strength-meter">
+        <div class="strength-label">Signal Strength</div>
+        <div class="strength-bar">
+          <div class="strength-fill" id="strength-fill"></div>
+        </div>
+        <div class="strength-value" id="strength-value">0%</div>
+      </div>
+    </div>
+    
+    <div class="indicators-panel">
+      <h3>Technical Indicators</h3>
+      <div class="indicator-grid">
+        <div class="indicator-item">
+          <div class="indicator-name">EMA</div>
+          <div class="indicator-value" id="ema-value">--</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-name">MACD</div>
+          <div class="indicator-value" id="macd-value">--</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-name">RSI</div>
+          <div class="indicator-value" id="rsi-value">--</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-name">BB</div>
+          <div class="indicator-value" id="bb-value">--</div>
+        </div>
+        <div class="indicator-item">
+          <div class="indicator-name">Volume</div>
+          <div class="indicator-value" id="volume-value">--</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chart-container">
+      <canvas id="signals-chart"></canvas>
+    </div>
+    
+    <div class="stats-container">
+      <h3>Performance Statistics</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-label">Accuracy</div>
+          <div class="stat-value" id="accuracy-value">--</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Total Signals</div>
+          <div class="stat-value" id="total-signals">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">AI Confidence</div>
+          <div class="stat-value" id="ai-confidence">--</div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="footer-text">AI-powered by Gemini API</div>
+      <div class="version">v1.0.0</div>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
